@@ -25,7 +25,6 @@ public class UserUpdateAction implements PteroAction<User> {
         json.put("username", user.getUsername());
         json.put("first_name", user.getFirstName());
         json.put("last_name", user.getLastName());
-        json.put("password", user.getPassword());
     }
 
     public UserUpdateAction setEmail(String email) {
@@ -45,11 +44,6 @@ public class UserUpdateAction implements PteroAction<User> {
 
     public UserUpdateAction setLastName(String lastName) {
         json.put("last_name", lastName);
-        return this;
-    }
-
-    public UserUpdateAction setPassword(String password) {
-        json.put("password", password);
         return this;
     }
 

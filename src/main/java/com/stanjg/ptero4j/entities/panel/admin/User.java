@@ -11,10 +11,10 @@ public class User {
 
     private PteroAdminAPI api;
     private int id, externalId;
-    private String uuid, username, email, firstName, lastName, language, password;
+    private String uuid, username, email, firstName, lastName, language;
     private boolean root_admin, twofa;
 
-    private User(PteroAdminAPI api, int id, int externalId, String uuid, String username, String email, String firstName, String lastName, String language, boolean root_admin, boolean totpEnabled, String password) {
+    private User(PteroAdminAPI api, int id, int externalId, String uuid, String username, String email, String firstName, String lastName, String language, boolean root_admin, boolean totpEnabled) {
         this.api = api;
         this.id = id;
         this.externalId = externalId;
@@ -26,7 +26,6 @@ public class User {
         this.language = language;
         this.root_admin = root_admin;
         this.twofa = totpEnabled;
-        this.password = password;
     }
 
     public User(PteroAdminAPI api, JSONObject json) {
@@ -41,8 +40,7 @@ public class User {
                 json.getString("last_name"),
                 json.getString("language"),
                 json.getBoolean("root_admin"),
-                json.getBoolean("2fa"),
-                json.getString("password")
+                json.getBoolean("2fa")
         );
     }
 
@@ -94,16 +92,11 @@ public class User {
         return language;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public boolean isAdmin() {
         return root_admin;
     }
 
-    public boolean hasTotpEnabled() {
+    public boolean has2faEnabled() {
         return twofa;
     }
-
 }
