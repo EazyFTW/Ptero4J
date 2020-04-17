@@ -50,7 +50,6 @@ public abstract class Controller {
                     addHeaders(getBuilder);
 
                     response = client.newCall(getBuilder.build()).execute();
-                    response.body().close();
                     return response;
 
                 case POST:
@@ -62,7 +61,6 @@ public abstract class Controller {
                     addHeaders(postBuilder);
 
                     response = client.newCall(postBuilder.build()).execute();
-                    response.body().close();
                     return response;
 
                 case PUT:
@@ -74,7 +72,6 @@ public abstract class Controller {
                     addHeaders(putBuilder);
 
                     response = client.newCall(putBuilder.build()).execute();
-                    response.body().close();
                     return response;
 
                 case PATCH:
@@ -86,7 +83,6 @@ public abstract class Controller {
                     addHeaders(patchBuilder);
 
                     response = client.newCall(patchBuilder.build()).execute();
-                    response.body().close();
                     return response;
 
                 case DELETE:
@@ -96,7 +92,6 @@ public abstract class Controller {
                     addHeaders(deleteBuilder);
 
                     response = client.newCall(deleteBuilder.build()).execute();
-                    response.body().close();
                     return response;
             }
         } catch (Exception exc) {
