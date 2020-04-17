@@ -12,12 +12,7 @@ public class ServerContainer {
     private Map<String, String> environmentVariables;
 
     public ServerContainer(JSONObject json) {
-        this(
-                json.getString("startup_command"),
-                json.getString("image"),
-                json.getBoolean("installed"),
-                json.getJSONObject("environment")
-        );
+        this(json.getString("startup_command"), json.getString("image"), json.getBoolean("installed"), json.getJSONObject("environment"));
     }
 
     private ServerContainer(String startupCommand, String image, boolean installed, JSONObject json) {

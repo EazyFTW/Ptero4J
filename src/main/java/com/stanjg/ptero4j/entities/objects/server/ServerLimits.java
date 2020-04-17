@@ -7,13 +7,7 @@ public class ServerLimits {
     private int disk, memory, swap, io, cpu;
 
     public ServerLimits(JSONObject json) {
-        this(
-                json.getInt("disk"),
-                json.getInt("memory"),
-                json.getInt("swap"),
-                json.getInt("io"),
-                json.getInt("cpu")
-        );
+        this(json.getInt("disk"), json.getInt("memory"), json.getInt("swap"), json.getInt("io"), json.getInt("cpu"));
     }
 
     private ServerLimits(int disk, int memory, int swap, int io, int cpu) {

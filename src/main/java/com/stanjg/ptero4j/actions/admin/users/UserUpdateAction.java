@@ -13,10 +13,7 @@ public class UserUpdateAction implements PteroAction<User> {
     private JSONObject json;
 
     public UserUpdateAction(PteroAdminAPI api, int id) {
-        this(
-                api,
-                api.getUsersController().getUser(id)
-        );
+        this(api, api.getUsersController().getUser(id));
     }
 
     public UserUpdateAction(PteroAdminAPI api, User user) {

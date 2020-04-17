@@ -13,11 +13,7 @@ public class GenericAdminAction implements PteroVoidAction {
     private JSONObject json;
 
     public GenericAdminAction(PteroAdminAPI api, String endpoint, HTTPMethod method) {
-        this(
-                api,
-                endpoint,
-                method,
-                new JSONObject()
+        this(api, endpoint, method, new JSONObject()
         );
     }
 

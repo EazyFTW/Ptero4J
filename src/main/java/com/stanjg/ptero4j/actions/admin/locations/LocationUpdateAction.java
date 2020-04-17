@@ -13,10 +13,7 @@ public class LocationUpdateAction implements PteroAction<Location> {
     private JSONObject json;
 
     public LocationUpdateAction(PteroAdminAPI api, int id) {
-        this(
-                api,
-                api.getLocationsController().getLocation(id)
-        );
+        this(api, api.getLocationsController().getLocation(id));
     }
 
     public LocationUpdateAction(PteroAdminAPI api, Location location) {

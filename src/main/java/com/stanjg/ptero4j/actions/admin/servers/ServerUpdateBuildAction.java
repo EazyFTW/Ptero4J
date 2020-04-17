@@ -15,10 +15,7 @@ public class ServerUpdateBuildAction implements PteroAction<Server> {
     private JSONObject json;
 
     public ServerUpdateBuildAction(PteroAdminAPI api, int serverId) {
-        this(
-                api,
-                api.getServersController().getServer(serverId)
-        );
+        this(api, api.getServersController().getServer(serverId));
     }
 
     public ServerUpdateBuildAction(PteroAdminAPI api, Server server) {

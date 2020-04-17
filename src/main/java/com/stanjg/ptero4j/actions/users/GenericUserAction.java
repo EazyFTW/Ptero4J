@@ -13,12 +13,7 @@ public class GenericUserAction implements PteroVoidAction {
     private JSONObject json;
 
     public GenericUserAction(PteroUserAPI api, String endpoint, HTTPMethod method) {
-        this(
-                api,
-                endpoint,
-                method,
-                new JSONObject()
-        );
+        this(api, endpoint, method, new JSONObject());
     }
 
     public GenericUserAction(PteroUserAPI api, String endpoint, HTTPMethod method, JSONObject json) {

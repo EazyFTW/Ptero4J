@@ -13,5 +13,4 @@ public enum PowerAction {
     public String getValue() {
         return value;
     }
-
 }

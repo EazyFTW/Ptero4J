@@ -13,10 +13,7 @@ public class NodeUpdateAction implements PteroAction<Node> {
     private JSONObject json;
 
     public NodeUpdateAction(PteroAdminAPI api, int id) {
-        this(
-                api,
-                api.getNodesController().getNode(id)
-        );
+        this(api, api.getNodesController().getNode(id));
     }
 
     public NodeUpdateAction(PteroAdminAPI api, Node node) {

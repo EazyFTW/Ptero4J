@@ -15,10 +15,7 @@ public class ServerUpdateDetailsAction implements PteroAction<Server> {
     private JSONObject json;
 
     public ServerUpdateDetailsAction(PteroAdminAPI api, int id) {
-        this(
-                api,
-                api.getServersController().getServer(id)
-        );
+        this(api, api.getServersController().getServer(id));
     }
 
     public ServerUpdateDetailsAction(PteroAdminAPI api, Server server) {

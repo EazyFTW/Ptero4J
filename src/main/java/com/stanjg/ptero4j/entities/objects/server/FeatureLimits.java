@@ -7,10 +7,7 @@ public class FeatureLimits {
     private int maxDatabases, maxAllocations;
 
     public FeatureLimits(JSONObject json) {
-        this(
-                json.isNull("databases") ? 0 : json.getInt("databases"),
-                json.isNull("allocations") ? 0 : json.getInt("allocations")
-        );
+        this(json.isNull("databases") ? 0 : json.getInt("databases"), json.isNull("allocations") ? 0 : json.getInt("allocations"));
     }
 
     private FeatureLimits(int maxDatabases, int maxAllocations) {

@@ -1,7 +1,9 @@
 package com.stanjg.ptero4j.entities.objects.server;
 
 public class ServerUsage {
-	private int disk,cpu,memory;
+
+	private int disk, cpu, memory;
+
 	public ServerUsage(int cpu, int memory, int disk) {
 		this.disk = disk;
 		this.cpu = cpu;

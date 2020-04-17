@@ -1,8 +1,6 @@
 package com.stanjg.ptero4j.util;
 
-import okhttp3.Request;
 import okhttp3.Response;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -17,7 +15,6 @@ public class PteroUtils {
     }
 
     private static String getErrorMessage(Response response) {
-
         switch (response.code()) {
             case 400:
             case 405:
@@ -33,7 +30,5 @@ public class PteroUtils {
             default:
                 return "An error occurred while making a request to the panel, if the issue persists please create an issue on github.\n" + response.code() + " " + response.request().method() + " " + response.request().url();
         }
-
     }
-
 }

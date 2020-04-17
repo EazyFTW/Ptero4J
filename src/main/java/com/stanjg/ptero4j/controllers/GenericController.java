@@ -24,7 +24,6 @@ public class GenericController extends Controller {
 
     public int executeAction(PteroVoidAction action) {
         JSONObject data = action.getAsJSON();
-
         try {
 
             Response response = makeApiCall(action.getEndpoint(), action.getMethod(), data);
@@ -39,5 +38,4 @@ public class GenericController extends Controller {
 
         return 0;
     }
-
 }
