@@ -8,7 +8,7 @@ public class CreationServerLimits {
 
     public CreationServerLimits() { }
 
-    public CreationServerLimits(int disk, int memory, int swap, int io, int cpu) {
+    public CreationServerLimits(int memory, int swap, int disk, int io, int cpu) {
         this.disk = disk;
         this.memory = memory;
         this.swap = swap;
