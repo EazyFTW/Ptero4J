@@ -2,6 +2,7 @@ package com.stanjg.ptero4j.actions.admin.servers;
 
 import com.stanjg.ptero4j.PteroAdminAPI;
 import com.stanjg.ptero4j.actions.PteroAction;
+import com.stanjg.ptero4j.entities.objects.server.MinecraftVersion;
 import com.stanjg.ptero4j.entities.objects.server.creation.CreationFeatureLimits;
 import com.stanjg.ptero4j.entities.objects.server.creation.CreationServerLimits;
 import com.stanjg.ptero4j.entities.panel.admin.Server;
@@ -59,8 +60,25 @@ public class ServerCreateAction implements PteroAction<Server> {
         return this;
     }
 
-    public ServerCreateAction setEnvironmentVariables() {
-        return this; // TODO
+    public ServerCreateAction setEnvironmentVariables(JSONObject object) {
+        json.put("environment", object);
+        return this;
+    }
+
+    public ServerCreateAction setServerVersion(MinecraftVersion version, String filename) {
+        JSONObject object = new JSONObject();
+        object.put("DL_VERSION", version.getVersion());
+        object.put("SERVER_JARFILE", (filename.endsWith(".jar") ? filename : filename + ".jar"));
+        object.put("VANILLA_VERSION", version.getVersion());
+        object.put("BUNGEE_VERSION", version.getVersion());
+        object.put("PAPER_VERSION", version.getVersion());
+        object.put("MC_VERSION", version.getVersion());
+        object.put("BUILD_NUMBER", version.getVersion());
+        return this;
+    }
+
+    public ServerCreateAction setServerVersion(MinecraftVersion version) {
+        return setServerVersion(version, "server.jar");
     }
 
     public ServerCreateAction setSkipScripts(boolean skipScripts) {
