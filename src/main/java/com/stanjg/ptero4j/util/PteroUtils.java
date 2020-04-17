@@ -12,6 +12,7 @@ public class PteroUtils {
 
     public static void logRequestError(Response response) throws IOException {
         System.out.println(getErrorMessage(response));
+        System.out.println(response.toString());
     }
 
     private static String getErrorMessage(Response response) {
