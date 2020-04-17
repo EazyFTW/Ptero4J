@@ -74,6 +74,7 @@ public class ServerCreateAction implements PteroAction<Server> {
         object.put("PAPER_VERSION", version.getVersion());
         object.put("MC_VERSION", version.getVersion());
         object.put("BUILD_NUMBER", version.getVersion());
+        setEnvironmentVariables(object);
         return this;
     }
 
