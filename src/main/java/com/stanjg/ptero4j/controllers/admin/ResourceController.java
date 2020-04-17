@@ -65,7 +65,6 @@ public abstract class ResourceController<T> extends Controller {
             }
 
             JSONObject json = new JSONObject(response.body().string()).getJSONObject("attributes");
-
             return getNewInstance(json);
 
         } catch (IOException e) {
