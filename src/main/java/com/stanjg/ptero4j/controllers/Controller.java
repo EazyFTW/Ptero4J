@@ -105,7 +105,7 @@ public abstract class Controller {
     }
 
     private void addHeaders(Request.Builder request) {
-        request.addHeader("Authorization", key)
+        request.addHeader("Authorization", "Bearer " + key)
                 .addHeader("Accept", "application/vnd.pterodactyl.v1+json")
                 .addHeader("User-Agent", "Ptero4J/v0.1");
     }
